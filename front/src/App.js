@@ -18,6 +18,7 @@ function App() {
     script.onload = async () => {
       const newMap = new window.google.maps.Map(mapRef.current, {
         center: { lat: 0, lng: 0 },
+        streetViewControl: false,
         zoom: 2,
       });
       setMap(newMap);
