@@ -35,7 +35,7 @@ def generate_events(count):
             "Location": random_tuples,
             "Damage": float(dmg_prediction),
             "Magnitude": float(mag_prediction),
-            "Missing or Dead": float(dead_prediction)
+            "MissingorDead": float(dead_prediction)
         }
         
         if len(events_list) >= 10:
