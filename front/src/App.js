@@ -27,6 +27,7 @@ function App() {
 
       const earthquakeData = await fetchEarthquakeData();
       if (earthquakeData && earthquakeData.items) {
+        let openMarker = null;
         earthquakeData.items.forEach(earthquake => {
           const marker = new window.google.maps.Marker({
             position: { lat: earthquake.latitude, lng: earthquake.longitude },
@@ -43,6 +44,9 @@ function App() {
 
           marker.infoWindowOpen = false;
           marker.addListener('click', function() {
+            if (openMarker) {
+              openMarker.close();
+            }
             if (marker.infoWindowOpen) {
               infoWindow.close();
               marker.infoWindowOpen = false;
@@ -50,6 +54,7 @@ function App() {
               infoWindow.open(newMap, marker);
               marker.infoWindowOpen = true;
             }
+            openMarker = infoWindow;
           });
         });
       }
