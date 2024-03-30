@@ -37,7 +37,7 @@ function App() {
           const infoWindow = new window.google.maps.InfoWindow({
             content: `<div>
               <p>Country: ${earthquake.country}</p>
-              <p>Magnitude: ${earthquake.intensity ? earthquake.intensity : 'Unknown'}</p>
+              <p>Magnitude: ${earthquake.eqMagnitude ? earthquake.eqMagnitude : 'Unrecorded'}</p>
               <p>Year: ${earthquake.year}</p>
             </div>`
           });
