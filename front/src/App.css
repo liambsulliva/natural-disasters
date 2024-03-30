@@ -6,6 +6,11 @@ body {
   background-color: #fafafa;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .App {
   text-align: center;
   font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
@@ -15,9 +20,13 @@ body {
   margin: 0 auto;
   height: 80vh;
   width: 70vw;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer {
   font-size: small;
+  margin-top: 20px;
+  color: #888;
 }
-

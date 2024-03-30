@@ -27,6 +27,7 @@ function App() {
 
       const earthquakeData = await fetchEarthquakeData();
       if (earthquakeData && earthquakeData.items) {
+        let openMarker = null;
         earthquakeData.items.forEach(earthquake => {
           const marker = new window.google.maps.Marker({
             position: { lat: earthquake.latitude, lng: earthquake.longitude },
@@ -36,13 +37,16 @@ function App() {
           const infoWindow = new window.google.maps.InfoWindow({
             content: `<div>
               <p>Country: ${earthquake.country}</p>
-              <p>Magnitude: ${earthquake.intensity ? earthquake.intensity : 'Unknown'}</p>
+              <p>Magnitude: ${earthquake.eqMagnitude ? earthquake.eqMagnitude : 'Unrecorded'}</p>
               <p>Year: ${earthquake.year}</p>
             </div>`
           });
 
           marker.infoWindowOpen = false;
           marker.addListener('click', function() {
+            if (openMarker) {
+              openMarker.close();
+            }
             if (marker.infoWindowOpen) {
               infoWindow.close();
               marker.infoWindowOpen = false;
@@ -50,6 +54,7 @@ function App() {
               infoWindow.open(newMap, marker);
               marker.infoWindowOpen = true;
             }
+            openMarker = infoWindow;
           });
         });
       }
@@ -62,7 +67,7 @@ function App() {
       <h1>Earthquake Tracker</h1>
       <div className='Map' ref={mapRef}></div>
       <footer>
-        <p>SteelHacks 2024: Liam Sullivan, Scott Styslinger, Mike Puthumana</p>
+        <p><a href='https://devpost.com/software/earthquake-tracker'>SteelHacks 2024: Liam Sullivan, Scott Styslinger, Mike Puthumana</a></p>
       </footer>
     </div>
   );
