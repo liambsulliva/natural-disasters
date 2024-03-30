@@ -4,6 +4,7 @@ import './App.css';
 async function fetchEarthquakeData() {
   const response = await fetch('https://www.ngdc.noaa.gov/hazel/hazard-service/api/v1/earthquakes?minYear=1900');
   const data = await response.json();
+  console.log(data);
   return data;
 }
 
@@ -31,13 +32,12 @@ function App() {
             position: { lat: earthquake.latitude, lng: earthquake.longitude },
             map: newMap,
           });
-          
+
           const infoWindow = new window.google.maps.InfoWindow({
             content: `<div>
-              <p>Damage: ${earthquake.deaths}</p>
-              <p>Location: ${earthquake.location}</p>
-              <p>Number of Missing: ${earthquake.numMissing}</p>
-              <p>Deaths: ${earthquake.deaths}</p>
+              <p>Country: ${earthquake.country}</p>
+              <p>Magnitude: ${earthquake.intensity ? earthquake.intensity : 'Unknown'}</p>
+              <p>Year: ${earthquake.year}</p>
             </div>`
           });
 
