@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+
+.App {
+  text-align: center;
+  font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+}
+
+.Map {
+  margin: 0 auto;
+  height: 80vh;
+  width: 70vw;
+}
+
+footer {
+  font-size: small;
+}
+
