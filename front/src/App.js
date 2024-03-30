@@ -19,6 +19,7 @@ function App() {
       const newMap = new window.google.maps.Map(mapRef.current, {
         center: { lat: 0, lng: 0 },
         streetViewControl: false,
+        fullscreenControl: false,
         zoom: 2,
       });
       setMap(newMap);
