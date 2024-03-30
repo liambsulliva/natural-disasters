@@ -6,6 +6,11 @@ body {
   background-color: #fafafa;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .App {
   text-align: center;
   font-family: "Roboto Slab", Helvetica, Arial, sans-serif;

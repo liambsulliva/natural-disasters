@@ -67,7 +67,7 @@ function App() {
       <h1>Earthquake Tracker</h1>
       <div className='Map' ref={mapRef}></div>
       <footer>
-        <p>SteelHacks 2024: Liam Sullivan, Scott Styslinger, Mike Puthumana</p>
+        <p><a href='https://devpost.com/software/earthquake-tracker'>SteelHacks 2024: Liam Sullivan, Scott Styslinger, Mike Puthumana</a></p>
       </footer>
     </div>
   );
