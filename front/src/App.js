@@ -27,9 +27,29 @@ function App() {
       const earthquakeData = await fetchEarthquakeData();
       if (earthquakeData && earthquakeData.items) {
         earthquakeData.items.forEach(earthquake => {
-          new window.google.maps.Marker({
+          const marker = new window.google.maps.Marker({
             position: { lat: earthquake.latitude, lng: earthquake.longitude },
             map: newMap,
+          });
+          
+          const infoWindow = new window.google.maps.InfoWindow({
+            content: `<div>
+              <p>Damage: ${earthquake.deaths}</p>
+              <p>Location: ${earthquake.location}</p>
+              <p>Number of Missing: ${earthquake.numMissing}</p>
+              <p>Deaths: ${earthquake.deaths}</p>
+            </div>`
+          });
+
+          marker.infoWindowOpen = false;
+          marker.addListener('click', function() {
+            if (marker.infoWindowOpen) {
+              infoWindow.close();
+              marker.infoWindowOpen = false;
+            } else {
+              infoWindow.open(newMap, marker);
+              marker.infoWindowOpen = true;
+            }
           });
         });
       }
