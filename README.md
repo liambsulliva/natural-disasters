@@ -1,4 +1,4 @@
-# Earthquake Tracker
+# Earthquake Generator
 
 This is a React application that tracks earthquakes around the world, starting at the year 1900.
 
