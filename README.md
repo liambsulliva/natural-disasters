@@ -1,6 +1,6 @@
 # Earthquake Generator
 
-This is a React application that tracks earthquakes around the world, starting at the year 1900.
+This is a React application that predicts earthquakes around the world utilizing data starting at the year 1900.
 
 ## Features
 
