@@ -52,5 +52,5 @@ if __name__ == '__main__':
         
     count = 0
     while True:
-        random_number = random.randint(1, 100000)
+        random_number = random.randint(1, 2000000)
         generate_events(random_number)
