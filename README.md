@@ -1,6 +1,6 @@
-# Earthquake Tracker
+# Earthquake Generator
 
-This is a React application that tracks earthquakes around the world, starting at the year 1900.
+This is a React application that predicts earthquakes around the world utilizing data starting at the year 1900.
 
 ## Features
 
@@ -9,4 +9,4 @@ This is a React application that tracks earthquakes around the world, starting a
 - Click on a marker to get more information about the disaster.
 
 ## Execution
-To run, navigate to the live build: https://liambsulliva.github.io/natural-disasters
+To run, navigate to the live build (must inject your own Google Maps API Key): https://liambsulliva.github.io/natural-disasters
